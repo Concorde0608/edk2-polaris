@@ -99,7 +99,7 @@
 
   # System Memory (4GB)
   gArmTokenSpaceGuid.PcdSystemMemoryBase|0x80000000
-  gArmTokenSpaceGuid.PcdSystemMemorySize|0xF8000000
+  gArmTokenSpaceGuid.PcdSystemMemorySize|0x180000000
 
   # We only boot one processor here!
   gArmPlatformTokenSpaceGuid.PcdCoreCount|1
@@ -113,7 +113,7 @@
   # ARM General Interrupt Controller
   #
   gArmTokenSpaceGuid.PcdGicDistributorBase|0x17a00000
-  gArmTokenSpaceGuid.PcdGicRedistributorsBase|0x17b00000
+  gArmTokenSpaceGuid.PcdGicRedistributorsBase|0x17a60000
 
   gArmTokenSpaceGuid.PcdArmArchTimerIntrNum|0x12
   gArmTokenSpaceGuid.PcdArmArchTimerVirtIntrNum|0x13
@@ -140,7 +140,7 @@
 
   gPolarisPkgTokenSpaceGuid.PcdMipiFrameBufferAddress|0x9d400000
   gPolarisPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1080
-  gPolarisPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|1920
+  gPolarisPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2160
 
   gEfiMdeModulePkgTokenSpaceGuid.PcdAcpiExposedTableVersions|0x20
 
