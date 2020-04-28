@@ -169,11 +169,11 @@ READ_LOCK_STATUS   = TRUE
 
     INF EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
 
-    FILE DRIVER = 7942a7eb-b7d5-4e2e-b908-831e4de55b58 {
-      SECTION DXE_DEPEX = PolarisPkg/Binary/GlinkDxe/GlinkDxe.depex
-      SECTION PE32 = PolarisPkg/Binary/GlinkDxe/GlinkDxe.efi
-      SECTION UI = "GlinkDxe"
-    }
+    # FILE DRIVER = 7942a7eb-b7d5-4e2e-b908-831e4de55b58 {
+    #   SECTION DXE_DEPEX = PolarisPkg/Binary/GlinkDxe/GlinkDxe.depex
+    #   SECTION PE32 = PolarisPkg/Binary/GlinkDxe/GlinkDxe.efi
+    #   SECTION UI = "GlinkDxe"
+    # }
 
     FILE DRIVER = e43128a8-8692-42b6-8afa-676158578d18 {
       SECTION DXE_DEPEX = PolarisPkg/Binary/ULogDxe/ULogDxe.depex
@@ -212,11 +212,11 @@ READ_LOCK_STATUS   = TRUE
     INF MdeModulePkg/Universal/Disk/UnicodeCollation/EnglishDxe/EnglishDxe.inf
     INF MdeModulePkg/Universal/FvSimpleFileSystemDxe/FvSimpleFileSystemDxe.inf
 
-    FILE DRIVER = b003d837-44cc-b38b-7811-deb5ebbd74d8 {
-      SECTION DXE_DEPEX = PolarisPkg/Binary/QdssDxe/QdssDxe.depex
-      SECTION PE32 = PolarisPkg/Binary/QdssDxe/QdssDxe.efi
-      SECTION UI = "QdssDxe"
-    }
+    # FILE DRIVER = b003d837-44cc-b38b-7811-deb5ebbd74d8 {
+    #   SECTION DXE_DEPEX = PolarisPkg/Binary/QdssDxe/QdssDxe.depex
+    #   SECTION PE32 = PolarisPkg/Binary/QdssDxe/QdssDxe.efi
+    #   SECTION UI = "QdssDxe"
+    # }
     
     #temporarily
     FILE DRIVER = 02b01ad5-7e59-43e8-a6d8-238180613a5a {
@@ -240,11 +240,11 @@ READ_LOCK_STATUS   = TRUE
       SECTION UI = "DALTLMM"
     }
 
-    FILE DRIVER = 04de8591-d2b3-4077-bbbe-b12070094eb6 {
-      SECTION DXE_DEPEX = PolarisPkg/Binary/I2C/I2C.depex
-      SECTION PE32 = PolarisPkg/Binary/I2C/I2C.efi
-      SECTION UI = "I2C"
-    }
+    # FILE DRIVER = 04de8591-d2b3-4077-bbbe-b12070094eb6 {
+    #   SECTION DXE_DEPEX = PolarisPkg/Binary/I2C/I2C.depex
+    #   SECTION PE32 = PolarisPkg/Binary/I2C/I2C.efi
+    #   SECTION UI = "I2C"
+    # }
 
     FILE DRIVER = 2a7b4bef-80cd-49e1-b473-374ba4d673fc {
       SECTION DXE_DEPEX = PolarisPkg/Binary/SPMI/SPMI.depex
@@ -365,22 +365,22 @@ READ_LOCK_STATUS   = TRUE
   #
   # ACPI Support
   #
-  INF MdeModulePkg/Universal/Acpi/AcpiTableDxe/AcpiTableDxe.inf
-  INF MdeModulePkg/Universal/Acpi/AcpiPlatformDxe/AcpiPlatformDxe.inf
-  INF MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResourceTableDxe.inf
+  # INF MdeModulePkg/Universal/Acpi/AcpiTableDxe/AcpiTableDxe.inf
+  # INF MdeModulePkg/Universal/Acpi/AcpiPlatformDxe/AcpiPlatformDxe.inf
+  # INF MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResourceTableDxe.inf
 #  INF RuleOverride = ACPITABLE PolarisPkg/AcpiTables/AcpiTables.inf
 
-  FILE FREEFORM = 7E374E25-8E01-4FEE-87F2-390C23C606CD {
-	SECTION RAW = PolarisPkg/AcpiTables/8998/DBG2.aml
-	SECTION RAW = PolarisPkg/AcpiTables/8998/DSDT.aml
-	SECTION RAW = PolarisPkg/AcpiTables/8998/FACS.aml
-	SECTION RAW = PolarisPkg/AcpiTables/8998/FADT.aml
-	SECTION RAW = PolarisPkg/AcpiTables/8998/GTDT.aml
-	SECTION RAW = PolarisPkg/AcpiTables/8998/MADT.aml
-	SECTION RAW = PolarisPkg/AcpiTables/8998/MCFG.aml
-	SECTION RAW = PolarisPkg/AcpiTables/8998/CSRT.aml
-	SECTION UI = "AcpiTables"
-  }
+  # FILE FREEFORM = 7E374E25-8E01-4FEE-87F2-390C23C606CD {
+	# SECTION RAW = PolarisPkg/AcpiTables/8998/DBG2.aml
+	# SECTION RAW = PolarisPkg/AcpiTables/8998/DSDT.aml
+	# SECTION RAW = PolarisPkg/AcpiTables/8998/FACS.aml
+	# SECTION RAW = PolarisPkg/AcpiTables/8998/FADT.aml
+	# SECTION RAW = PolarisPkg/AcpiTables/8998/GTDT.aml
+	# SECTION RAW = PolarisPkg/AcpiTables/8998/MADT.aml
+	# SECTION RAW = PolarisPkg/AcpiTables/8998/MCFG.aml
+	# SECTION RAW = PolarisPkg/AcpiTables/8998/CSRT.aml
+	# SECTION UI = "AcpiTables"
+  # }
 
   #
   # SMBIOS Support
@@ -463,11 +463,11 @@ READ_LOCK_STATUS   = TRUE
     SECTION UI = "PlatformInfoDxeDriver"
   }
 
-  FILE DRIVER = 7942a7eb-b7d5-4e2e-b908-831e4de55b58 {
-    SECTION DXE_DEPEX = PolarisPkg/Binary/GlinkDxe/GlinkDxe.depex
-    SECTION PE32 = PolarisPkg/Binary/GlinkDxe/GlinkDxe.efi
-    SECTION UI = "GlinkDxe"
-  }
+  # FILE DRIVER = 7942a7eb-b7d5-4e2e-b908-831e4de55b58 {
+  #   SECTION DXE_DEPEX = PolarisPkg/Binary/GlinkDxe/GlinkDxe.depex
+  #   SECTION PE32 = PolarisPkg/Binary/GlinkDxe/GlinkDxe.efi
+  #   SECTION UI = "GlinkDxe"
+  # }
 
   FILE DRIVER = e43128a8-8692-42b6-8afa-676158578d18 {
     SECTION DXE_DEPEX = PolarisPkg/Binary/ULogDxe/ULogDxe.depex
@@ -507,11 +507,11 @@ READ_LOCK_STATUS   = TRUE
 
   INF MdeModulePkg/Universal/FvSimpleFileSystemDxe/FvSimpleFileSystemDxe.inf
 
-  FILE DRIVER = b003d837-44cc-b38b-7811-deb5ebbd74d8 {
-    SECTION DXE_DEPEX = PolarisPkg/Binary/QdssDxe/QdssDxe.depex
-    SECTION PE32 = PolarisPkg/Binary/QdssDxe/QdssDxe.efi
-    SECTION UI = "QdssDxe"
-  }
+  # FILE DRIVER = b003d837-44cc-b38b-7811-deb5ebbd74d8 {
+  #   SECTION DXE_DEPEX = PolarisPkg/Binary/QdssDxe/QdssDxe.depex
+  #   SECTION PE32 = PolarisPkg/Binary/QdssDxe/QdssDxe.efi
+  #   SECTION UI = "QdssDxe"
+  # }
 
   FILE DRIVER = 02b01ad5-7e59-43e8-a6d8-238180613a5a {
     SECTION DXE_DEPEX = PolarisPkg/Binary/EmuVariableRuntimeDxe/EmuVariableRuntimeDxe.depex
@@ -525,11 +525,11 @@ READ_LOCK_STATUS   = TRUE
     SECTION UI = "DALTLMM"
   }
 
-  FILE DRIVER = 04de8591-d2b3-4077-bbbe-b12070094eb6 {
-    SECTION DXE_DEPEX = PolarisPkg/Binary/I2C/I2C.depex
-    SECTION PE32 = PolarisPkg/Binary/I2C/I2C.efi
-    SECTION UI = "I2C"
-  }
+  # FILE DRIVER = 04de8591-d2b3-4077-bbbe-b12070094eb6 {
+  #   SECTION DXE_DEPEX = PolarisPkg/Binary/I2C/I2C.depex
+  #   SECTION PE32 = PolarisPkg/Binary/I2C/I2C.efi
+  #   SECTION UI = "I2C"
+  # }
 
   FILE DRIVER = 2a7b4bef-80cd-49e1-b473-374ba4d673fc {
     SECTION DXE_DEPEX = PolarisPkg/Binary/SPMI/SPMI.depex
