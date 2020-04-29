@@ -74,19 +74,19 @@ ArmPlatformGetVirtualMemoryMap (
         }
 
     update:
-        ASSERT(Index < MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT);
+        // ASSERT(Index < MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT);
 
         MemoryDescriptor[Index].PhysicalBase = MemoryDescriptorEx->Address;
         MemoryDescriptor[Index].VirtualBase = MemoryDescriptorEx->Address;
         MemoryDescriptor[Index].Length = MemoryDescriptorEx->Length;
-		MemoryDescriptor[Index].Attributes = MemoryDescriptorEx->ArmAttributes;
+		    MemoryDescriptor[Index].Attributes = MemoryDescriptorEx->ArmAttributes;
 
         Index++;
         MemoryDescriptorEx++;
     }
 
     // Last one (terminator)
-    ASSERT(Index < MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT);
+    // ASSERT(Index < MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT);
     
     *VirtualMemoryMap = MemoryDescriptor;
   //ASSERT(0);
