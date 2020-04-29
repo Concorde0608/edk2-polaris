@@ -3,7 +3,7 @@
 
 #include <Library/ArmLib.h>
 
-#define MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT 64
+#define MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT 76
 
 /* Below flag is used for system memory */
 #define SYSTEM_MEMORY_RESOURCE_ATTR_CAPABILITIES                               \
