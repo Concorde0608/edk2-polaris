@@ -95,15 +95,15 @@
 [PcdsFixedAtBuild.common]
   gEfiMdePkgTokenSpaceGuid.PcdDefaultTerminalType|4
 
-  gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVersionString|L"Alpha"
+  gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVersionString|L"Bullshit"
 
   # System Memory (4GB)
   gArmTokenSpaceGuid.PcdSystemMemoryBase|0x80000000
   gArmTokenSpaceGuid.PcdSystemMemorySize|0xF8000000
 
-  # We only boot one processor here!
-  gArmPlatformTokenSpaceGuid.PcdCoreCount|1
-  gArmPlatformTokenSpaceGuid.PcdClusterCount|1
+  # We boot all processors here!!!!!
+  gArmPlatformTokenSpaceGuid.PcdCoreCount|8
+  gArmPlatformTokenSpaceGuid.PcdClusterCount|2
 
   #
   # ARM PrimeCell
@@ -139,7 +139,7 @@
   #
   gEfiMdeModulePkgTokenSpaceGuid.PcdEmuVariableNvModeEnable|TRUE
 
-  gPolarisPkgTokenSpaceGuid.PcdMipiFrameBufferAddress|0x9D469780
+  gPolarisPkgTokenSpaceGuid.PcdMipiFrameBufferAddress|0x9d400000
   gPolarisPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1080
   gPolarisPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2160
 
