@@ -1,3 +1,4 @@
+
 #ifndef _FB_COLOR_H_
 #define _FB_COLOR_H_
 
@@ -12,3 +13,4 @@
 #define FB_BGRA8888_GREEN          0xff00ff00
 
 #endif
+

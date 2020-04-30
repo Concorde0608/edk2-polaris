@@ -14,38 +14,36 @@
 **/
 
 #include <Library/ArmPlatformLib.h>
+#include <Library/MemoryAllocationLib.h>
 #include <Library/DebugLib.h>
 #include <Library/HobLib.h>
 #include <Configuration/DeviceMemoryMap.h>
 /**
   Return the Virtual Memory Map of your platform
-
   This Virtual Memory Map is used by MemoryInitPei Module to initialize the MMU on your platform.
-
   @param[out]   VirtualMemoryMap    Array of ARM_MEMORY_REGION_DESCRIPTOR describing a Physical-to-
                                     Virtual Memory mapping. This array must be ended by a zero-filled
                                     entry
-
 **/
 
 STATIC
 VOID
 AddHob
 (
-    PARM_MEMORY_REGION_DESCRIPTOR_EX Desc
+    ARM_MEMORY_REGION_DESCRIPTOR_EX Desc
 )
 {
 	BuildResourceDescriptorHob(
-		Desc->ResourceType,
-		Desc->ResourceAttribute,
-		Desc->Address,
-		Desc->Length
+		Desc.ResourceType,
+		Desc.ResourceAttribute,
+		Desc.Address,
+		Desc.Length
 	);
 
 	BuildMemoryAllocationHob(
-		Desc->Address,
-		Desc->Length,
-		Desc->MemoryType
+		Desc.Address,
+		Desc.Length,
+		Desc.MemoryType
 	);
 }
 
@@ -55,18 +53,21 @@ ArmPlatformGetVirtualMemoryMap (
   )
 {
   //TO-DO:ADD MEMORY MAP HERE
-    PARM_MEMORY_REGION_DESCRIPTOR_EX MemoryDescriptorEx = gDeviceMemoryDescriptorEx;
-    ARM_MEMORY_REGION_DESCRIPTOR MemoryDescriptor[MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT];
+    ARM_MEMORY_REGION_DESCRIPTOR* MemoryDescriptor;
     UINTN Index = 0;
 
+    MemoryDescriptor = (ARM_MEMORY_REGION_DESCRIPTOR*)AllocatePages
+                       (EFI_SIZE_TO_PAGES (sizeof (ARM_MEMORY_REGION_DESCRIPTOR) *
+                       MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT));
+
     // Run through each memory descriptor
-    while (MemoryDescriptorEx->Address != (EFI_PHYSICAL_ADDRESS)0xFFFFFFFF)
+    while (gDeviceMemoryDescriptorEx[Index].Address != (EFI_PHYSICAL_ADDRESS)0xFFFFFFFF)
     {
-        switch (MemoryDescriptorEx->HobOption)
+        switch (gDeviceMemoryDescriptorEx[Index].HobOption)
         {
             case AddMem:
 			case AddDev:
-                AddHob(MemoryDescriptorEx);
+                AddHob(gDeviceMemoryDescriptorEx[Index]);
                 break;
             case NoHob:
             default:
@@ -74,21 +75,23 @@ ArmPlatformGetVirtualMemoryMap (
         }
 
     update:
-        // ASSERT(Index < MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT);
+        ASSERT(Index < MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT);
 
-        MemoryDescriptor[Index].PhysicalBase = MemoryDescriptorEx->Address;
-        MemoryDescriptor[Index].VirtualBase = MemoryDescriptorEx->Address;
-        MemoryDescriptor[Index].Length = MemoryDescriptorEx->Length;
-		    MemoryDescriptor[Index].Attributes = MemoryDescriptorEx->ArmAttributes;
+        MemoryDescriptor[Index].PhysicalBase = gDeviceMemoryDescriptorEx[Index].Address;
+        MemoryDescriptor[Index].VirtualBase = gDeviceMemoryDescriptorEx[Index].Address;
+        MemoryDescriptor[Index].Length = gDeviceMemoryDescriptorEx[Index].Length;
+	MemoryDescriptor[Index].Attributes = gDeviceMemoryDescriptorEx[Index].ArmAttributes;
 
         Index++;
-        MemoryDescriptorEx++;
     }
 
     // Last one (terminator)
-    // ASSERT(Index < MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT);
+    MemoryDescriptor[Index].PhysicalBase = 0;
+    MemoryDescriptor[Index].VirtualBase = 0;
+    MemoryDescriptor[Index].Length = 0;
+    MemoryDescriptor[Index++].Attributes = (ARM_MEMORY_REGION_ATTRIBUTES)0;
+    ASSERT(Index <= MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT);
     
-    *VirtualMemoryMap = MemoryDescriptor;
+    *VirtualMemoryMap = &MemoryDescriptor[0];
   //ASSERT(0);
 }
-

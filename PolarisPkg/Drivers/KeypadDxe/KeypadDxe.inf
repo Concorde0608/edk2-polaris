@@ -35,7 +35,7 @@
 [Packages]
   MdePkg/MdePkg.dec
   MdeModulePkg/MdeModulePkg.dec
-  Lumia930Pkg/Lumia930Pkg.dec
+  PolarisPkg/PolarisPkg.dec
 
 [LibraryClasses]
   MemoryAllocationLib

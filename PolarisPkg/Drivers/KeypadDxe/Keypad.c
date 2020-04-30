@@ -1,17 +1,13 @@
 /** @file
-
   Keypad driver. Routines that interacts with callers,
   conforming to EFI driver model
-
 Copyright (c) 2006 - 2016, Intel Corporation. All rights reserved.<BR>
 This program and the accompanying materials
 are licensed and made available under the terms and conditions of the BSD License
 which accompanies this distribution.  The full text of the license may be found at
 http://opensource.org/licenses/bsd-license.php
-
 THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
 WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
-
 **/
 
 #include "Keypad.h"
@@ -22,11 +18,9 @@ WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
 //
 /**
   Test controller is a keypad Controller.
-
   @param This                 Pointer of EFI_DRIVER_BINDING_PROTOCOL
   @param Controller           driver's controller
   @param RemainingDevicePath  children device path
-
   @retval EFI_UNSUPPORTED controller is not floppy disk
   @retval EFI_SUCCESS     controller is floppy disk
 **/
@@ -40,11 +34,9 @@ KeypadControllerDriverSupported (
 
 /**
   Create KEYPAD_CONSOLE_IN_DEV instance on controller.
-
   @param This         Pointer of EFI_DRIVER_BINDING_PROTOCOL
   @param Controller   driver controller handle
   @param RemainingDevicePath Children's device path
-
   @retval whether success to create floppy control instance.
 **/
 EFI_STATUS
@@ -58,16 +50,13 @@ KeypadControllerDriverStart (
 /**
   Stop this driver on ControllerHandle. Support stopping any child handles
   created by this driver.
-
   @param  This              Protocol instance pointer.
   @param  ControllerHandle  Handle of device to stop driver on
   @param  NumberOfChildren  Number of Handles in ChildHandleBuffer. If number of
                             children is zero stop the entire bus driver.
   @param  ChildHandleBuffer List of Child Handles to Stop.
-
   @retval EFI_SUCCESS       This driver is removed ControllerHandle
   @retval other             This driver was not removed from this device
-
 **/
 EFI_STATUS
 EFIAPI
@@ -80,9 +69,7 @@ KeypadControllerDriverStop (
 
 /**
   Free the waiting key notify list.
-
   @param ListHead  Pointer to list head
-
   @retval EFI_INVALID_PARAMETER  ListHead is NULL
   @retval EFI_SUCCESS            Sucess to free NotifyList
 **/
@@ -105,11 +92,9 @@ EFI_DRIVER_BINDING_PROTOCOL gKeypadControllerDriver = {
 
 /**
   Test controller is a keypad Controller.
-
   @param This                 Pointer of EFI_DRIVER_BINDING_PROTOCOL
   @param Controller           driver's controller
   @param RemainingDevicePath  children device path
-
   @retval EFI_UNSUPPORTED controller is not floppy disk
   @retval EFI_SUCCESS     controller is floppy disk
 **/
@@ -202,11 +187,9 @@ KeypadReturnApiPushEfikeyBufTail (
 
 /**
   Create KEYPAD_CONSOLE_IN_DEV instance on controller.
-
   @param This         Pointer of EFI_DRIVER_BINDING_PROTOCOL
   @param Controller   driver controller handle
   @param RemainingDevicePath Children's device path
-
   @retval whether success to create floppy control instance.
 **/
 EFI_STATUS
@@ -412,16 +395,13 @@ ErrorExit:
 /**
   Stop this driver on ControllerHandle. Support stopping any child handles
   created by this driver.
-
   @param  This              Protocol instance pointer.
   @param  ControllerHandle  Handle of device to stop driver on
   @param  NumberOfChildren  Number of Handles in ChildHandleBuffer. If number of
                             children is zero stop the entire bus driver.
   @param  ChildHandleBuffer List of Child Handles to Stop.
-
   @retval EFI_SUCCESS       This driver is removed ControllerHandle
   @retval other             This driver was not removed from this device
-
 **/
 EFI_STATUS
 EFIAPI
@@ -515,9 +495,7 @@ KeypadControllerDriverStop (
 
 /**
   Free the waiting key notify list.
-
   @param ListHead  Pointer to list head
-
   @retval EFI_INVALID_PARAMETER  ListHead is NULL
   @retval EFI_SUCCESS            Sucess to free NotifyList
 **/
@@ -547,13 +525,10 @@ KbdFreeNotifyList (
 
 /**
   The module Entry Point for module Keypad.
-
   @param[in] ImageHandle    The firmware allocated handle for the EFI image.
   @param[in] SystemTable    A pointer to the EFI System Table.
-
   @retval EFI_SUCCESS       The entry point is executed successfully.
   @retval other             Some error occurs when executing this entry point.
-
 **/
 EFI_STATUS
 EFIAPI
@@ -580,4 +555,3 @@ InitializeKeypad(
 
   return Status;
 }
-

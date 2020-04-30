@@ -1,16 +1,13 @@
 /** @file
   Routines implements SIMPLE_TEXT_IN protocol's interfaces based on interfaces
   provided by KeypadController.c.
-
 Copyright (c) 2006 - 2016, Intel Corporation. All rights reserved.<BR>
 This program and the accompanying materials
 are licensed and made available under the terms and conditions of the BSD License
 which accompanies this distribution.  The full text of the license may be found at
 http://opensource.org/licenses/bsd-license.php
-
 THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
 WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
-
 **/
 
 
@@ -18,9 +15,7 @@ WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
 
 /**
   Check whether the EFI key buffer is empty.
-
   @param Queue     Pointer to instance of EFI_KEY_QUEUE.
-
   @retval TRUE    The EFI key buffer is empty.
   @retval FALSE   The EFI key buffer isn't empty.
 **/
@@ -34,10 +29,8 @@ IsEfikeyBufEmpty (
 
 /**
   Read & remove one key data from the EFI key buffer.
-
   @param Queue     Pointer to instance of EFI_KEY_QUEUE.
   @param KeyData   Receive the key data.
-
   @retval EFI_SUCCESS   The key data is popped successfully.
   @retval EFI_NOT_READY There is no key data available.
 **/
@@ -62,7 +55,6 @@ PopEfikeyBufHead (
 
 /**
   Push one key data to the EFI key buffer.
-
   @param Queue     Pointer to instance of EFI_KEY_QUEUE.
   @param KeyData   The key data to push.
 **/
@@ -84,15 +76,12 @@ PushEfikeyBufTail (
 
 /**
   Judge whether is a registed key
-
   @param RegsiteredData       A pointer to a buffer that is filled in with the keystroke
                               state data for the key that was registered.
   @param InputData            A pointer to a buffer that is filled in with the keystroke
                               state data for the key that was pressed.
-
   @retval TRUE                Key be pressed matches a registered key.
   @retval FLASE               Match failed.
-
 **/
 BOOLEAN
 IsKeyRegistered (
@@ -127,18 +116,14 @@ IsKeyRegistered (
 /**
     Reads the next keystroke from the input device. The WaitForKey Event can
     be used to test for existance of a keystroke via WaitForEvent () call.
-
     @param ConsoleInDev          Keypad private structure
     @param KeyData               A pointer to a buffer that is filled in with the keystroke
                                  state data for the key that was pressed.
-
-
     @retval EFI_SUCCESS             The keystroke information was returned.
     @retval EFI_NOT_READY           There was no keystroke data availiable.
     @retval EFI_DEVICE_ERROR        The keystroke information was not returned due to
                                     hardware errors.
     @retval EFI_INVALID_PARAMETER   KeyData is NULL.
-
 **/
 EFI_STATUS
 KeypadReadKeyStrokeWorker (
@@ -173,12 +158,10 @@ KeypadReadKeyStrokeWorker (
 
 /**
   Perform 8042 controller and keypad initialization which implement SIMPLE_TEXT_IN.Reset()
-
   @param This                 Pointer to instance of EFI_SIMPLE_TEXT_INPUT_PROTOCOL
   @param ExtendedVerification Indicate that the driver may perform a more
                               exhaustive verification operation of the device during
                               reset, now this par is ignored in this driver
-
 **/
 EFI_STATUS
 EFIAPI
@@ -223,10 +206,8 @@ KeypadEfiReset (
 
 /**
   Retrieve key values for driver user which implement SIMPLE_TEXT_IN.ReadKeyStroke().
-
   @param This    Pointer to instance of EFI_SIMPLE_TEXT_INPUT_PROTOCOL
   @param Key     The output buffer for key value
-
   @retval EFI_SUCCESS success to read key stroke
 **/
 EFI_STATUS
@@ -281,10 +262,8 @@ KeypadReadKeyStroke (
 /**
   Event notification function for SIMPLE_TEXT_IN.WaitForKey event
   Signal the event if there is key available
-
   @param Event    the event object
   @param Context  waitting context
-
 **/
 VOID
 EFIAPI
@@ -339,10 +318,8 @@ KeypadWaitForKey (
 /**
   Event notification function for SIMPLE_TEXT_INPUT_EX_PROTOCOL.WaitForKeyEx event
   Signal the event if there is key available
-
   @param Event    event object
   @param Context  waiting context
-
 **/
 VOID
 EFIAPI
@@ -357,14 +334,11 @@ KeypadWaitForKeyEx (
 
 /**
   Reset the input device and optionaly run diagnostics
-
   @param This                     Protocol instance pointer.
   @param ExtendedVerification     Driver may perform diagnostics on reset.
-
   @retval EFI_SUCCESS             The device was reset.
   @retval EFI_DEVICE_ERROR        The device is not functioning properly and could
                                   not be reset.
-
 **/
 EFI_STATUS
 EFIAPI
@@ -387,18 +361,14 @@ KeypadEfiResetEx (
 /**
     Reads the next keystroke from the input device. The WaitForKey Event can
     be used to test for existance of a keystroke via WaitForEvent () call.
-
-
     @param This         Protocol instance pointer.
     @param KeyData      A pointer to a buffer that is filled in with the keystroke
                         state data for the key that was pressed.
-
     @retval EFI_SUCCESS           The keystroke information was returned.
     @retval EFI_NOT_READY         There was no keystroke data availiable.
     @retval EFI_DEVICE_ERROR      The keystroke information was not returned due to
                                   hardware errors.
     @retval EFI_INVALID_PARAMETER KeyData is NULL.
-
 **/
 EFI_STATUS
 EFIAPI
@@ -420,17 +390,14 @@ KeypadReadKeyStrokeEx (
 
 /**
   Set certain state for the input device.
-
   @param This               Protocol instance pointer.
   @param KeyToggleState     A pointer to the EFI_KEY_TOGGLE_STATE to set the
                             state for the input device.
-
   @retval EFI_SUCCESS           The device state was set successfully.
   @retval EFI_DEVICE_ERROR      The device is not functioning correctly and could
                                 not have the setting adjusted.
   @retval EFI_UNSUPPORTED       The device does not have the ability to set its state.
   @retval EFI_INVALID_PARAMETER KeyToggleState is NULL.
-
 **/
 EFI_STATUS
 EFIAPI
@@ -498,18 +465,15 @@ Exit:
 
 /**
     Register a notification function for a particular keystroke for the input device.
-
     @param This                       Protocol instance pointer.
     @param KeyData                    A pointer to a buffer that is filled in with the keystroke
                                       information data for the key that was pressed.
     @param KeyNotificationFunction    Points to the function to be called when the key
                                       sequence is typed specified by KeyData.
     @param NotifyHandle               Points to the unique handle assigned to the registered notification.
-
     @retval EFI_SUCCESS               The notification function was registered successfully.
     @retval EFI_OUT_OF_RESOURCES      Unable to allocate resources for necesssary data structures.
     @retval EFI_INVALID_PARAMETER     KeyData or NotifyHandle or KeyNotificationFunction is NULL.
-
 **/
 EFI_STATUS
 EFIAPI
@@ -585,14 +549,10 @@ Exit:
 
 /**
     Remove a registered notification function from a particular keystroke.
-
     @param This                       Protocol instance pointer.
     @param NotificationHandle         The handle of the notification function being unregistered.
-
-
     @retval EFI_SUCCESS               The notification function was unregistered successfully.
     @retval EFI_INVALID_PARAMETER     The NotificationHandle is invalid.
-
 **/
 EFI_STATUS
 EFIAPI
@@ -651,7 +611,6 @@ Exit:
 
 /**
   Process key notify.
-
   @param  Event                 Indicates the event that invoke this function.
   @param  Context               Indicates the calling context.
 **/
@@ -697,4 +656,3 @@ KeyNotifyProcessHandler (
     }
   }
 }
-
