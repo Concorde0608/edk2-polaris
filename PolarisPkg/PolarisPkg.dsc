@@ -239,7 +239,7 @@
   MdeModulePkg/Universal/Acpi/AcpiTableDxe/AcpiTableDxe.inf
   MdeModulePkg/Universal/Acpi/AcpiPlatformDxe/AcpiPlatformDxe.inf
   MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResourceTableDxe.inf
-  PolarisPkg/AcpiTables/AcpiTables.inf
+  #PolarisPkg/AcpiTables/AcpiTables.inf
 
   #
   # SMBIOS Support

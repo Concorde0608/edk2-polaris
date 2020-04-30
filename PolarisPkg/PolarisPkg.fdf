@@ -189,7 +189,37 @@ READ_LOCK_STATUS   = TRUE
   INF MdeModulePkg/Universal/Acpi/AcpiTableDxe/AcpiTableDxe.inf
   INF MdeModulePkg/Universal/Acpi/AcpiPlatformDxe/AcpiPlatformDxe.inf
   INF MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResourceTableDxe.inf
-  INF RuleOverride = ACPITABLE PolarisPkg/AcpiTables/AcpiTables.inf
+ # INF RuleOverride = ACPITABLE PolarisPkg/AcpiTables/AcpiTables.inf
+
+  FILE FREEFORM = 7E374E25-8E01-4FEE-87F2-390C23C606CD {
+	# SECTION RAW = PolarisPkg/AcpiTables/845/DBG2.aml
+	# SECTION RAW = PolarisPkg/AcpiTables/845/DSDT.aml
+	# SECTION RAW = PolarisPkg/AcpiTables/845/FACS.aml
+	# SECTION RAW = PolarisPkg/AcpiTables/845/FADT.aml
+	# SECTION RAW = PolarisPkg/AcpiTables/845/GTDT.aml
+	# SECTION RAW = PolarisPkg/AcpiTables/845/MADT.aml
+	# SECTION RAW = PolarisPkg/AcpiTables/845/MCFG.aml
+	# SECTION RAW = PolarisPkg/AcpiTables/845/CSRT.aml
+  	SECTION RAW = PolarisPkg/AcpiTables/SDM850/dbg2.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/dsdt.aml
+    SECTION RAW = PolarisPkg/AcpiTables/SDM850/csrt.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/apic.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/bgrt.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/facp.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/fpdt.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/gtdt.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/iort.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/mcfg.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/msdm.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/pptt.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/ssdt.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/ssdt1.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/tpm2.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/xsdt.aml
+
+	SECTION UI = "AcpiTables"
+  }
+
 
   #
   # SMBIOS Support
