@@ -92,6 +92,9 @@
   AuthVariableLib|MdeModulePkg/Library/AuthVariableLibNull/AuthVariableLibNull.inf
 
   # BDS Libraries
+  LittleVglLib|PolarisPkg/Library/LittleVglLib/LittleVglLib.inf
+  LodePngLib|PolarisPkg/Library/LodePngLib/LodePngLib.inf
+
   FdtLib|EmbeddedPkg/Library/FdtLib/FdtLib.inf
   UefiDevicePathLib|MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib.inf
 

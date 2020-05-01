@@ -110,6 +110,27 @@ READ_LOCK_STATUS   = TRUE
 
   INF MdeModulePkg/Core/Dxe/DxeMain.inf
 
+  # FILE DRIVER = 90a49afd-422f-08ae-9611-e788d3804845 {
+  #     SECTION DXE_DEPEX = PolarisPkg/Binary/EnvDxe/EnvDxe.depex
+  #     SECTION PE32 = PolarisPkg/Binary/EnvDxe/EnvDxe.efi
+  #     SECTION UI = "EnvDxe"
+  # }
+
+  # FILE DRIVER = 5e0eae60-eaed-4d75-b8bf-edbbaabc3f09 {
+  #     SECTION PE32 = PolarisPkg/Binary/SecurityDxe/SecurityDxe.efi
+  #     SECTION UI = "SecurityDxe"
+  # }
+
+  FILE DRIVER = c2f9a4f5-f7b4-43e7-ba99-5ea804cc103a {
+      SECTION PE32 = PolarisPkg/Binary/ASN1X509Dxe/ASN1X509Dxe.efi
+      SECTION UI = "ASN1X509Dxe"
+  }
+
+  FILE DRIVER = 32c71e68-83a8-46ed-aed1-094e71b12057 {
+      SECTION PE32 = PolarisPkg/Binary/SecRSADxe/SecRSADxe.efi
+      SECTION UI = "SecRSADxe"
+  }
+
   #
   # PI DXE Drivers producing Architectural Protocols (EFI Services)
   #
@@ -202,16 +223,16 @@ READ_LOCK_STATUS   = TRUE
 	# # # # SECTION RAW = PolarisPkg/AcpiTables/845/CSRT.aml
   	SECTION RAW = PolarisPkg/AcpiTables/SDM850/dbg2.aml
 	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/dsdt.aml
-    # SECTION RAW = PolarisPkg/AcpiTables/SDM850/csrt.aml
+    SECTION RAW = PolarisPkg/AcpiTables/SDM850/csrt.aml
 	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/apic.aml
 	  # # SECTION RAW = PolarisPkg/AcpiTables/SDM850/bgrt.aml
 	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/facp.aml
 	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/fpdt.aml
 	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/gtdt.aml
-	  # SECTION RAW = PolarisPkg/AcpiTables/SDM850/iort.aml
-	  # SECTION RAW = PolarisPkg/AcpiTables/SDM850/mcfg.aml
-	  # SECTION RAW = PolarisPkg/AcpiTables/SDM850/msdm.aml
-	  # SECTION RAW = PolarisPkg/AcpiTables/SDM850/pptt.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/iort.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/mcfg.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/msdm.aml
+	  SECTION RAW = PolarisPkg/AcpiTables/SDM850/pptt.aml
 	  # SECTION RAW = PolarisPkg/AcpiTables/SDM850/ssdt.aml
 	  # SECTION RAW = PolarisPkg/AcpiTables/SDM850/ssdt1.aml
 	  # SECTION RAW = PolarisPkg/AcpiTables/SDM850/tpm2.aml
@@ -245,7 +266,7 @@ READ_LOCK_STATUS   = TRUE
   INF PolarisPkg/Drivers/LogoDxe/LogoDxe.inf
 
   #
-  # Binary Drivers from Poco F1
+  # Binary Drivers from Xiaomi MIX 2s
   #
 
   FILE DRIVER = 0d35cd8e-97ea-4f9a-96af-0f0d89f76567 {
@@ -259,6 +280,36 @@ READ_LOCK_STATUS   = TRUE
     SECTION PE32 = PolarisPkg/Binary/SPMI/SPMI.efi
     SECTION UI = "SPMI"
   }
+
+  FILE DRIVER = 5bd181db-0487-4f1a-ae73-820e165611b3 {
+    SECTION DXE_DEPEX = PolarisPkg/Binary/ButtonsDxe/ButtonsDxe.depex
+    SECTION PE32 = PolarisPkg/Binary/ButtonsDxe/ButtonsDxe.efi
+    SECTION UI = "ButtonsDxe"
+  }
+
+  # FILE DRIVER = f541d663-4a48-40aa-aabf-ff158ccae34c {
+  #   SECTION DXE_DEPEX = PolarisPkg/Binary/SmemDxe/SmemDxe.depex
+  #   SECTION PE32 = PolarisPkg/Binary/SmemDxe/SmemDxe.efi
+  #   SECTION UI = "SmemDxe"
+  # }
+
+  # FILE DRIVER = 10e193df-9966-44e7-b17c-59dd831e20fc {
+  #   SECTION DXE_DEPEX = PolarisPkg/Binary/ChipInfo/ChipInfo.depex
+  #   SECTION PE32 = PolarisPkg/Binary/ChipInfo/ChipInfo.efi
+  #   SECTION UI = "ChipInfo"
+  # }
+
+  # FILE DRIVER = cb29f4d1-7f37-4692-a416-93e82e219711 {
+  #   SECTION DXE_DEPEX = PolarisPkg/Binary/NpaDxe/NpaDxe.depex
+  #   SECTION PE32 = PolarisPkg/Binary/NpaDxe/NpaDxe.efi
+  #   SECTION UI = "NpaDxe"
+  # }
+
+  # FILE DRIVER = B336F62D-4135-4A55-AE4E-4971BBF0885D {
+  #   SECTION DXE_DEPEX = PolarisPkg/Binary/RealTimeClock/RealTimeClock.depex
+  #   SECTION PE32 = PolarisPkg/Binary/RealTimeClock/RealTimeClock.efi
+  #   SECTION UI = "RealTimeClock"
+  # }
 
 [FV.FVMAIN_COMPACT]
 FvAlignment        = 8
