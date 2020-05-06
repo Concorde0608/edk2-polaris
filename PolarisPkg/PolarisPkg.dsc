@@ -69,6 +69,9 @@
 
   SerialPortLib|PolarisPkg/Library/FrameBufferSerialPortLib/FrameBufferSerialPortLib.inf
   PlatformBootManagerLib|PolarisPkg/Library/PlatformBootManagerLib/PlatformBootManagerLib.inf
+  MemoryInitPeiLib|PolarisPkg/Library/MemoryInitPeiLib/PeiMemoryAllocationLib.inf
+  PlatformPeiLib|PolarisPkg/Library/PlatformPeiLib/PlatformPeiLib.inf
+																			   
 
 [LibraryClasses.common.SEC]
   PrePiLib|EmbeddedPkg/Library/PrePiLib/PrePiLib.inf
@@ -99,11 +102,11 @@
 
   # System Memory (4GB)
   gArmTokenSpaceGuid.PcdSystemMemoryBase|0x80000000
-  gArmTokenSpaceGuid.PcdSystemMemorySize|0xF8000000
+  gArmTokenSpaceGuid.PcdSystemMemorySize|0x100000000
 
-  # We boot all processors here!!!!!
-  gArmPlatformTokenSpaceGuid.PcdCoreCount|8
-  gArmPlatformTokenSpaceGuid.PcdClusterCount|2
+  # We boot ... processors here!!!!!
+  gArmPlatformTokenSpaceGuid.PcdCoreCount|1
+  gArmPlatformTokenSpaceGuid.PcdClusterCount|1
 
   #
   # ARM PrimeCell
@@ -121,7 +124,7 @@
   # GUID of the UI app
   gEfiMdeModulePkgTokenSpaceGuid.PcdBootManagerMenuFile|{ 0x21, 0xaa, 0x2c, 0x46, 0x14, 0x76, 0x03, 0x45, 0x83, 0x6e, 0x8a, 0xb6, 0xf4, 0x66, 0x23, 0x31 }
 
-  gEfiMdePkgTokenSpaceGuid.PcdPlatformBootTimeOut|5
+  gEfiMdePkgTokenSpaceGuid.PcdPlatformBootTimeOut|3
 
   gEfiMdeModulePkgTokenSpaceGuid.PcdResetOnMemoryTypeInformationChange|FALSE
 
@@ -192,6 +195,10 @@
 
   MdeModulePkg/Universal/PCD/Dxe/Pcd.inf
 
+  EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf {
+    <LibraryClasses>
+	  RealTimeClockLib|PolarisPkg/Library/VirtualRealTimeClockLib/VirtualRealTimeClockLib.inf
+  }
   #
   # GPIO
   #
@@ -232,6 +239,7 @@
   MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.inf
   MdeModulePkg/Universal/Disk/UnicodeCollation/EnglishDxe/EnglishDxe.inf
   FatPkg/EnhancedFatDxe/Fat.inf
+  MdeModulePkg/Universal/FvSimpleFileSystemDxe/FvSimpleFileSystemDxe.inf
 
   #
   # ACPI Support
@@ -250,12 +258,15 @@
   #
   # Bds
   #
+  MdeModulePkg/Universal/PrintDxe/PrintDxe.inf
   MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
   MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf {
     <LibraryClasses>
       PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
   }
   MdeModulePkg/Universal/DisplayEngineDxe/DisplayEngineDxe.inf
+  MdeModulePkg/Universal/SetupBrowserDxe/SetupBrowserDxe.inf
+  MdeModulePkg/Universal/DriverHealthManagerDxe/DriverHealthManagerDxe.inf
   MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
   MdeModulePkg/Application/UiApp/UiApp.inf {
     <LibraryClasses>

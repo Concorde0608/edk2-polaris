@@ -38,7 +38,9 @@
   # Simple FrameBuffer
   gPolarisPkgTokenSpaceGuid.PcdMipiFrameBufferAddress|0x00400000|UINT32|0x0000a400
   gPolarisPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1080|UINT32|0x0000a401
-  gPolarisPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|1920|UINT32|0x0000a402
+  gPolarisPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2160|UINT32|0x0000a402
   gPolarisPkgTokenSpaceGuid.PcdMipiFrameBufferPixelBpp|32|UINT32|0x0000a403
   gPolarisPkgTokenSpaceGuid.PcdMipiFrameBufferVisibleWidth|1080|UINT32|0x0000a404
-  gPolarisPkgTokenSpaceGuid.PcdMipiFrameBufferVisibleHeight|2234|UINT32|0x0000a405
+  gPolarisPkgTokenSpaceGuid.PcdMipiFrameBufferVisibleHeight|2160|UINT32|0x0000a405
+  # RTC information
+  gPolarisPkgTokenSpaceGuid.PcdBootShimInfo1|0xb0000000|UINT64|0x00000a601

@@ -62,7 +62,8 @@
   ArmGicArchLib|ArmPkg/Library/ArmGicArchLib/ArmGicArchLib.inf
   ArmPlatformStackLib|ArmPlatformPkg/Library/ArmPlatformStackLib/ArmPlatformStackLib.inf
   ArmSmcLib|ArmPkg/Library/ArmSmcLib/ArmSmcLib.inf
-  ArmMmuLib|PolarisPkg/Library/ArmMmuLib/ArmMmuBaseLib.inf
+  #ArmMmuLib|PolarisPkg/Library/ArmMmuLib/ArmMmuBaseLib.inf
+  ArmMmuLib|ArmPkg/Library/ArmMmuLib/ArmMmuBaseLib.inf
 
   ResetSystemLib|ArmPkg/Library/ArmSmcPsciResetSystemLib/ArmSmcPsciResetSystemLib.inf
 
@@ -92,8 +93,6 @@
   AuthVariableLib|MdeModulePkg/Library/AuthVariableLibNull/AuthVariableLibNull.inf
 
   # BDS Libraries
-  LittleVglLib|PolarisPkg/Library/LittleVglLib/LittleVglLib.inf
-  LodePngLib|PolarisPkg/Library/LodePngLib/LodePngLib.inf
 
   FdtLib|EmbeddedPkg/Library/FdtLib/FdtLib.inf
   UefiDevicePathLib|MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib.inf
@@ -166,7 +165,8 @@
   ## Fixed compile error after upgrade to 14.10
   PlatformPeiLib|ArmPlatformPkg/PlatformPei/PlatformPeiLib.inf
   PcdLib|MdePkg/Library/PeiPcdLib/PeiPcdLib.inf
-  ArmMmuLib|PolarisPkg/Library/ArmMmuLib/ArmMmuPeiLib.inf
+  #ArmMmuLib|PolarisPkg/Library/ArmMmuLib/ArmMmuPeiLib.inf
+  ArmMmuLib|ArmPkg/Library/ArmMmuLib/ArmMmuPeiLib.inf
   BaseMemoryLib|MdePkg/Library/BaseMemoryLib/BaseMemoryLib.inf
 
 [LibraryClasses.common.DXE_CORE]
@@ -267,6 +267,8 @@
   gEfiMdePkgTokenSpaceGuid.PcdUefiLibMaxPrintBufferSize|320
   gEfiMdePkgTokenSpaceGuid.PcdDefaultTerminalType|4
 
+  gEfiMdeModulePkgTokenSpaceGuid.PcdImageProtectionPolicy|0
+  gEfiMdeModulePkgTokenSpaceGuid.PcdDxeNxMemoryProtectionPolicy|0
   # DEBUG_ASSERT_ENABLED       0x01
   # DEBUG_PRINT_ENABLED        0x02
   # DEBUG_CODE_ENABLED         0x04
@@ -296,7 +298,7 @@
   #  DEBUG_EVENT     0x00080000  // Event messages
   #  DEBUG_ERROR     0x80000000  // Error
 
-  gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x80000002
+  gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x80000046
   gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x06
 
   #
