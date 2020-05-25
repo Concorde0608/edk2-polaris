@@ -1,7 +1,10 @@
+# DEPRECATED - DO NOT USE
+
+  Refer to <https://github.com/edk2-porting/edk2-sdm845>
 
 Attempt to create a minimal EDK2 for Xiaomi MIX 2s.
 
-Based on fxsheep's port for Pixel3XL (https://github.com/fxsheep/edk2-sagit).
+Based on fxsheep's port for Pixel3XL (<https://github.com/fxsheep/edk2-sagit).>
 
 ## Status 
 
@@ -16,6 +19,7 @@ It is still beginning. 😂
 ...
 
 ## Building
+
 Tested on WSL2.
 
 First, clone EDK2.
